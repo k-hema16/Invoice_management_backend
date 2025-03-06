@@ -6,7 +6,7 @@ const productRoutes = require('./routes/products');
 const db = require('./models/db');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Insert sample data if tables are empty
