@@ -17,7 +17,6 @@ router.post('/', (req, res) => {
   );
 });
 
-// 2. Get All Products
 router.get('/', (req, res) => {
   db.all('SELECT * FROM products', [], (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
@@ -25,7 +24,6 @@ router.get('/', (req, res) => {
   });
 });
 
-// 3. Get Product by ID
 router.get('/:id', (req, res) => {
   db.get('SELECT * FROM products WHERE id = ?', [req.params.id], (err, row) => {
     if (err) return res.status(500).json({ error: err.message });
